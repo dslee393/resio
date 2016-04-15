@@ -1,4 +1,4 @@
-npm-deb.log*
+npm-debug.log*
 node_modules
 client/bundle.js
 client/styles.css

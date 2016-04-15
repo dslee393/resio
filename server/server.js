@@ -2,23 +2,37 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
-const app = express();
 const reactEngine = require('react-engine');
-const Sockets = require('./controllers/socketController');
+var io = require('socket.io')(app);
 
-<<<<<<< HEAD
-console.log("Running server.js");
-=======
-app.get('/', function(req, res) {
+var app = require('http').createServer(handler)
 
+app.listen(3000);
+
+function handler (req, res) {
+  fs.readFile(__dirname + '/index.html',
+  function (err, data) {
+    if (err) {
+      res.writeHead(500);
+      return res.end('Error loading index.html');
+    }
+
+    res.writeHead(200);
+    res.end(data);
+  });
+}
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+
+  socket.on('viewerAnswer', function(data) {
+  	//Send data to presenter
+  	socket.emit('newResponse', function(data) {
+
+  	})
+  })
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
 });
-
-app.get('/present', function(req, res) {
-	
-});
-
-app.get('/respond', function(req, res) {
-
-});
->>>>>>> dcef58f50f7986c0d4c3ea270e899195df619f5b
