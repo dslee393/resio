@@ -7,7 +7,9 @@
     "prestart":"npm run build",
     "start": "nodemon server/server.js",
     "build": "browserify -t [ babelify --presets [ react es2015 ] ] src/index.js -o client/bundle.js",
-    "test": "echo \"No Tests Specified\""
+    "lint": "eslint *.js && eslint *.jsx",
+    "pretest": "npm run lint",
+    "test": "export NODE_ENV=test && mocha --timeout 3000 test/"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "zombie": "^4.2.1"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "history": "^2.0.1",
     "react": "^15.0.1",
