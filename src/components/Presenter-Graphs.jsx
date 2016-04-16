@@ -20,6 +20,7 @@ class Graphs extends React.Component {
 	var res2 = this.props.viewerResponse['Carlos.MyPoll.1.1'][0];
 	var res3 = this.props.viewerResponse['Carlos.MyPoll.1.2'][0];
 	var res4 = this.props.viewerResponse['Carlos.MyPoll.1.3'][0];
+
 	var total = res1 + res2 + res3 + res4;
 
 	var q2 = [{

@@ -8,25 +8,25 @@ class QuestionApp extends React.Component {
     this.state = { questions:
         [{ qID: '',
              questionText: 'Who has the coolest scratch project?',
-             choices: [{ cID: '', choiceText: 'Daniel', selected: false },
-                        { cID: '', choiceText: 'Dave', selected: false },
-                        { cID: '', choiceText: 'Alex', selected: false },
-                        { cID: '', choiceText: 'Carlos', selected: false },
+             choices: [{ cID: '', choiceText: 'Daniel', select: false },
+                        { cID: '', choiceText: 'Dave', select: false },
+                        { cID: '', choiceText: 'Alex', select: false },
+                        { cID: '', choiceText: 'Carlos', select: false },
                       ],
             questionType: 'multipleChoice'
           },
           { qID: '',
               questionText: 'Who is the coolest Codesmith staff member?',
-              choices: [{ cID: '', choiceText: 'Victoria', selected: false },
-                          { cID: '', choiceText: 'Hira', selected: false },
-                          { cID: '', choiceText: 'Andy', selected: false },
-                          { cID: '', choiceText: 'DavcID', selected: false },
+              choices: [{ cID: '', choiceText: 'Victoria', select: false },
+                          { cID: '', choiceText: 'Hira', select: false },
+                          { cID: '', choiceText: 'Andy', select: false },
+                          { cID: '', choiceText: 'DavcID', select: false },
                         ],
               questionType: 'multipleChoice'
           },
           { qID: '',
                 questionText: 'Thumbs up or thumbs down on the drinks last Thursday?',
-                choices: [ {cID: '', choiceText: 'Thumbs Up', selected: false}],
+                choices: [ {cID: '', choiceText: 'Thumbs Up', select: false}],
                 questionType: 'thumbs'
           }
         ]
