@@ -26,7 +26,7 @@ class QuestionContainer extends React.Component {
         <div className=".col-md-4">
           <div className="panel panel-default panel-wizard">
             <div className="panel-body">
-            <h3>{this.props.question.questionText}</h3>
+            <h3>{this.props.question.question}</h3>
             <row>
               {choices}
             </row>
