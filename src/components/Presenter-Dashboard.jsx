@@ -65,16 +65,16 @@ class Dashboard extends React.Component {
       socket.on('serverResponse', function(data) {
           answerIncrease = { data: [ self.state[data][0]++, false };
           self.setState(answerIncrease);
-      });
-    };
+      };
 
-  render() {
-    return (
-      <div>
-      <h5>Showing Responses</h5>
-      <Graphs viewerResponse={this.state} />
-      </div>
-    );
+    render() {
+      return (
+        <div>
+        <h5>Showing Responses</h5>
+        <Graphs viewerResponse={this.state} />
+        </div>
+      );
+    }
   }
 }
 
