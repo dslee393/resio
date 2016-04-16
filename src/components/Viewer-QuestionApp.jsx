@@ -44,7 +44,7 @@ class QuestionApp extends React.Component {
 
   render() {
     return (
-      <div id="">
+      <div>
         <Questions questionState={this.state.questions} updateQuestion= {this.updateQuestion} />
       </div>
     );

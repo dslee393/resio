@@ -5,11 +5,11 @@ class QuestionContainer extends React.Component {
   render() {
     const choices = this.props.question.choices.map((choice, i) => {
       return (<Choice key={ i }
+                qType = {this.props.question.questionType}
                 qIdentifier= { this.props.qIdentifier } 
                 cIdentifier={ i } 
-                qChoice={ choice } 
-              />
-              );
+                qChoice={ choice } />
+             );
     });
 
     return (

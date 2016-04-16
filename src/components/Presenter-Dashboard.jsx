@@ -8,15 +8,16 @@ class Dashboard extends React.Component {
     super(props);
     const self = this;
     let answerIncrease;
+    let answerSame;
     this.state = {
-        'Carlos.MyPoll.0.0': 0,
-        'Carlos.MyPoll.0.1': 0,
-        'Carlos.MyPoll.0.2': 0,
-        'Carlos.MyPoll.0.3': 0,
-        'Carlos.MyPoll.1.0': 0,
-        'Carlos.MyPoll.1.1': 0,
-        'Carlos.MyPoll.1.2': 0,
-        'Carlos.MyPoll.1.3': 0,
+        'Carlos.MyPoll.0.0': [0, false], 
+        'Carlos.MyPoll.0.1': [0, false],
+        'Carlos.MyPoll.0.2': [0, false],
+        'Carlos.MyPoll.0.3': [0, false],
+        'Carlos.MyPoll.1.0': [0, false],
+        'Carlos.MyPoll.1.1': [0, false],
+        'Carlos.MyPoll.1.2': [0, false],
+        'Carlos.MyPoll.1.3': [0, false]
 
        // Questions:
        //   [
@@ -63,8 +64,17 @@ class Dashboard extends React.Component {
         //     }
         // ],
       socket.on('serverResponse', function(data) {
-        answerIncrease = { data: self.state[data]++ };
-        self.setState(answerIncrease);
+        if(self.state[data][1] === false){
+          answerIncrease = { data: [ self.state[data][0]++, self.state[data][1]++] };
+          for(var response in self.state){
+            if(response === data){
+              self.setState(answerIncrease);
+            } else if(response[14] === data[14]){
+              answerSame = { response: [ self.state[response][0], self.state[response][1]++ ] };
+              self.setState(answerSame);
+            }
+          }
+        } 
       });
     };
 
