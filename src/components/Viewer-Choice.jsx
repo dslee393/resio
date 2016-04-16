@@ -14,15 +14,19 @@ class Choice extends React.Component {
     if(this.props.qType === 'multipleChoice') {
       return (
         <div id="">
-<<<<<<< HEAD
           <button className= "btn btn-default res-btn" 
-            onClick={ (event) => if(this.props.qSelected === false)
-            {this.submitAnswer(this.props.qIdentifier,this.props.cIdentifier)}}>
+            onClick={ 
+              (event) => {
+                if(this.props.qSelected === false){
+                  this.submitAnswer(this.props.qIdentifier,this.props.cIdentifier);
+                  this.props.qSelected = true;
+                  this.props.shutOff(this.props.qIdentifier); 
+                }
+              }
+            }
+          >
             {this.props.qChoice.choiceText}
           </button>
-=======
-          <button className="btn btn-default res-btn" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.qChoice.choiceText)}>{this.props.qChoice.choiceText}</button>
->>>>>>> efca62e615b3694e36d535f52ee7b480a1119ae3
         </div>
       );
     }
