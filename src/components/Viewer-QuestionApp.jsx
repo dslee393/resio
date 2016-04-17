@@ -46,13 +46,8 @@ class QuestionApp extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-        <Questions questionState={this.state.questions} updateQuestion= {this.updateQuestion} />
-=======
       <div id="">
         <Questions questionState={this.state.questions} />
->>>>>>> bb625c15aca0ce978eb67a09a2b597936c529412
       </div>
     );
   }
